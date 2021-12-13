@@ -36,14 +36,14 @@ public class OrderController {
 
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
-    public Order create(@RequestBody Order fragance) {
-        return userOrder.create(fragance);
+    public Order create(@RequestBody Order peripheral) {
+        return userOrder.create(peripheral);
     }
 
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Order update(@RequestBody Order fragance) {
-        return userOrder.update(fragance);
+    public Order update(@RequestBody Order peripheral) {
+        return userOrder.update(peripheral);
     }
 
     @DeleteMapping("/{id}")
@@ -52,7 +52,7 @@ public class OrderController {
         return userOrder.delete(id);
     }
 
-    //Reto 3:Ordenes de pedido asociadas a los asesores de una zona
+    
     @GetMapping("/zona/{zona}")
     public List<Order> findByZone(@PathVariable("zona") String zona) {
         return userOrder.findByZone(zona);
